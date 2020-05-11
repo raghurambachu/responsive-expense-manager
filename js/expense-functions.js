@@ -115,6 +115,11 @@ function handleEnterOnEditOfExpenseAmount(event){
     let getId = parentElement.dataset.id;
     let findIndex = expenseArr.findIndex(expenseItem => expenseItem.id === getId);
     const oldAmount = expenseArr[findIndex].amount;
+    if(+event.target.value < 1){
+        td.innerText = expenseArr[findIndex].amount;
+        parentElement.replaceChild(td,oldElement);
+        return;
+    }
     expenseArr[findIndex].amount = +event.target.value;
     balance = +balance + oldAmount - +event.target.value
     localStorage.setItem("balance",balance)

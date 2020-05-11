@@ -5,6 +5,9 @@ const incomeFormDiv_DOM = document.querySelector(".income-form");
 const expenseToggler_DOM = document.querySelector(".expense-toggler");
 const expenseFormDiv_DOM = document.querySelector(".expense-form");
 
+const balanceDisplay_DOM = document.querySelector(".balance-display");
+const darkMode_DOM = document.querySelector(".dark-mode button");
+
 //Form elements
 const incomeForm_DOM = document.querySelector(".income-form form");
 const incomeCategory_DOM = document.querySelector(".income-category");
@@ -97,3 +100,5 @@ document.body.addEventListener("keyup",function(event){
     if(event.keyCode !== 13)return;
     handleEnterOnEditOfExpenseAmount(event);
 })
+
+darkMode_DOM.addEventListener("click",handleDarkModeClick);

@@ -61,6 +61,36 @@ body{
 	line-height: 1.6;
 }
 
+a{
+	text-decoration: none;
+}
+
+.dark-mode{
+	position: absolute;
+	right: 2.5%;
+	top: 2.5%;
+	button{
+		font-size: 1.5rem;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		&:hover{
+			transform: scale(1.2);
+		}
+	}
+}
+
+.active{
+	background: rgba(0,0,0,0.75);
+	color: black;
+}
+
+.white{
+	color: white;
+}
+
+
 .expense-manager{  
 	@media all and (min-width:545px){
 		display: flex;
@@ -88,6 +118,18 @@ body{
 		@media all and (min-width:545px) {
 			width: 40%;
 			
+		}
+		.balance-display{
+			font-size: 24px;
+			font-weight: 500;
+			margin: 1em 0;
+		}
+		.note{
+			max-width: 260px;
+			font-size: 0.7rem;
+		}
+		.note-span{
+			font-weight: 700;
 		}
 	}
     .income-expense-container{
@@ -182,6 +224,7 @@ body{
 			justify-content: center;
 			
 		}
+		
 	}
 
 	
@@ -222,8 +265,19 @@ body{
 					font-size: 10px;
 				}
 			}
+			.income-delete{
+				&:hover{
+					transform: scale(1.15);
+				}
+			}
+			.expense-delete{
+				&:hover{
+					transform: scale(1.15);
+				}
+			}
 			input{
 				width: 100%;
+				height: 100%;
 			}
 			tbody{
 				text-align: center;
@@ -234,8 +288,15 @@ body{
 		}
 		thead tr{
 			background: rgba($color: #494848, $alpha: 1.0);
-			color: whitesmoke;
+			color: white;
+		}
+		tbody tr{
+			background-color: wheat;
 		}	
 		
 	}
+}
+
+footer{
+	text-align: center;
 }

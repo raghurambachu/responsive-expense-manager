@@ -66,6 +66,35 @@ body {
   line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+}
+
+.dark-mode {
+  position: absolute;
+  right: 2.5%;
+  top: 2.5%;
+}
+.dark-mode button {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.dark-mode button:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  background: rgba(0, 0, 0, 0.75);
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
 @media all and (min-width: 545px) {
   .expense-manager {
     display: flex;
@@ -99,6 +128,18 @@ body {
   .expense-manager .income-expense-wrapper {
     width: 40%;
   }
+}
+.expense-manager .income-expense-wrapper .balance-display {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 1em 0;
+}
+.expense-manager .income-expense-wrapper .note {
+  max-width: 260px;
+  font-size: 0.7rem;
+}
+.expense-manager .income-expense-wrapper .note-span {
+  font-weight: 700;
 }
 .expense-manager .income-expense-container {
   max-width: 320px;
@@ -242,8 +283,15 @@ body {
     font-size: 10px;
   }
 }
+.expense-manager .summary-container table .income-delete:hover {
+  transform: scale(1.15);
+}
+.expense-manager .summary-container table .expense-delete:hover {
+  transform: scale(1.15);
+}
 .expense-manager .summary-container table input {
   width: 100%;
+  height: 100%;
 }
 .expense-manager .summary-container table tbody {
   text-align: center;
@@ -253,7 +301,14 @@ body {
 }
 .expense-manager .summary-container thead tr {
   background: #494848;
-  color: whitesmoke;
+  color: white;
+}
+.expense-manager .summary-container tbody tr {
+  background-color: wheat;
+}
+
+footer {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

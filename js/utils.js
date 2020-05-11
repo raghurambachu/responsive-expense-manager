@@ -1,3 +1,17 @@
+function handleDarkModeClick(event){
+    if(!event.target.closest(".dark-mode-button")) return;
+    document.body.classList.toggle("active");
+    const captions_DOM = document.querySelectorAll("caption");
+    captions_DOM.forEach(caption => caption.classList.toggle("white"));
+    const h1_DOM = document.querySelector("h1");
+    const note_DOM = document.querySelector(".note");
+    h1_DOM.classList.toggle("white");
+    note_DOM.classList.toggle("white");
+    balanceDisplay_DOM.classList.toggle("white");
+    darkMode_DOM.classList.toggle("white");
+}
+
+
 // Random Id generator
 function randomIdGenerator(size = 10){
     let randomId = "a";
@@ -66,4 +80,5 @@ function createUI(root,arr = incomeArr,type = "income"){
         `
     }).join("")
     root.innerHTML = tBodyInnerHtml;
+    balanceDisplay_DOM.innerHTML = `<strong>Balance is : Rs${balance}</strong>`
 }

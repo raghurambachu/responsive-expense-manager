@@ -48,6 +48,7 @@ function handleDblClickOnIncomeCategory(event){
         `
     }).join("");
     selectTag.innerHTML = selectInnerHtml;
+    selectTag.autofocus = true;
     let parentElement = element.parentElement;
     parentElement.replaceChild(selectTag,element);
 }
@@ -73,6 +74,7 @@ function handleDblClickOnIncomeSource(event){
     inputTag.name = "income-source";
     inputTag.className = "income-source";
     inputTag.value = event.target.innerText;
+    inputTag.autofocus = true;
   
     let parentElement = element.parentElement;
     parentElement.replaceChild(inputTag,element);
@@ -100,6 +102,7 @@ function handleDblClickOnIncomeAmount(event){
     inputTag.name = "income-amount";
     inputTag.className = "income-amount";
     inputTag.value = event.target.innerText;
+    inputTag.autofocus = true;
   
     let parentElement = element.parentElement;
     parentElement.replaceChild(inputTag,element);
@@ -114,6 +117,11 @@ function handleEnterOnEditOfIncomeAmount(event){
     let getId = parentElement.dataset.id;
     let findIndex = incomeArr.findIndex(incomeItem => incomeItem.id === getId);
     const oldAmount = incomeArr[findIndex].amount;
+    if(+event.target.value < 1){
+        td.innerText = incomeArr[findIndex].amount;
+        parentElement.replaceChild(td,oldElement);
+        return;
+    }
     incomeArr[findIndex].amount = +event.target.value;
     balance = +balance - oldAmount + +event.target.value
     localStorage.setItem("balance",balance)
