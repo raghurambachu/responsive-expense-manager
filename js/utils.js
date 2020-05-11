@@ -84,5 +84,5 @@ function createUI(root,arr = incomeArr,type = "income"){
         `
     }).join("")
     root.innerHTML = tBodyInnerHtml;
-    balanceDisplay_DOM.innerHTML = `<strong>Balance is : Rs${balance}</strong>`
+    balanceDisplay_DOM.innerHTML = `<strong>Balance is : Rs ${balance}</strong>`
 }
