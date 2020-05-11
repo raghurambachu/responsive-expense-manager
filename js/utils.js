@@ -57,7 +57,7 @@ function createUI(root,arr = incomeArr,type = "income"){
         let dateTime = new Date(arrItem["date"]).toString().split(" ");
         return `
             <tr data-id="${arrItem.id}">
-                <td>${dateTime[2]}-${dateTime[1]}-${dateTime[3]}</td>
+                <td class="${type}-date">${dateTime[2]}-${dateTime[1]}-${dateTime[3]}</td>
                 <td class="${type}-category">${arrItem.category}</td>
                 <td class="${type}-source">${arrItem.source}</td>
                 <td class="${type}-amount">${arrItem.amount}</td>

@@ -232,6 +232,19 @@ body {
     font-size: 15px;
   }
 }
+@media all and (max-width: 545px) {
+  .expense-manager .summary-container table .income-date, .expense-manager .summary-container table .expense-date {
+    font-size: 6px;
+  }
+}
+@media all and (max-width: 768px) {
+  .expense-manager .summary-container table .income-date, .expense-manager .summary-container table .expense-date {
+    font-size: 10px;
+  }
+}
+.expense-manager .summary-container table input {
+  width: 100%;
+}
 .expense-manager .summary-container table tbody {
   text-align: center;
 }

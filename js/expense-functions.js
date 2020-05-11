@@ -91,3 +91,34 @@ function handleEnterOnEditOfExpenseSource(event){
     parentElement.replaceChild(td,oldElement);
     createUI(expenseTbody_DOM,expenseArr,"expense");
 }
+
+
+function handleDblClickOnExpenseAmount(event){
+    if(!(event.target.closest(".expense-amount"))) return;
+    let element = event.target.closest(".expense-amount");
+    let inputTag = document.createElement("input");
+    inputTag.type = "number";
+    inputTag.name = "expense-amount";
+    inputTag.className = "expense-amount";
+    inputTag.value = event.target.innerText;
+  
+    let parentElement = element.parentElement;
+    parentElement.replaceChild(inputTag,element);
+}
+
+function handleEnterOnEditOfExpenseAmount(event){
+    let td = document.createElement("td");
+    td.className = "expense-amount";
+    td.innerText = event.target.value;
+    let parentElement = event.target.parentElement;
+    let oldElement = event.target;
+    let getId = parentElement.dataset.id;
+    let findIndex = expenseArr.findIndex(expenseItem => expenseItem.id === getId);
+    const oldAmount = expenseArr[findIndex].amount;
+    expenseArr[findIndex].amount = +event.target.value;
+    balance = +balance + oldAmount - +event.target.value
+    localStorage.setItem("balance",balance)
+    localStorage.setItem("expenseArr",JSON.stringify(expenseArr));
+    parentElement.replaceChild(td,oldElement);
+    createUI(expenseTbody_DOM,expenseArr,"expense");
+}

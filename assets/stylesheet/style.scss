@@ -213,7 +213,17 @@ body{
 				@media all and (min-width:1051px){
 					font-size: 15px;
 				}
-			
+			}
+			.income-date,.expense-date{
+				@media all and (max-width:545px){
+					font-size: 6px;
+				}
+				@media all and (max-width:768px){
+					font-size: 10px;
+				}
+			}
+			input{
+				width: 100%;
 			}
 			tbody{
 				text-align: center;

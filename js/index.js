@@ -49,38 +49,51 @@ document.body.addEventListener("dblclick",function(event){
     handleDblClickOnIncomeSource(event);
     handleDblClickOnExpenseSource(event);
     handleDblClickOnIncomeAmount(event);
+    handleDblClickOnExpenseAmount(event);
 })
 
 document.body.addEventListener("change",function(event){
-    if(!event.target.closest(".income-category"))return;
+    if(!event.target.closest("table .income-category"))return;
     handleChangeOrEnterOnEditOfIncomeCategory(event) //related to handleDblClickOnIncomeCategory   
 })
 
 document.body.addEventListener("change",function(event){
-    if(!event.target.closest(".expense-category"))return;
+    if(!event.target.closest("table .expense-category"))return;
     handleChangeOrEnterOnEditOfExpenseCategory(event) //related to  handleDblClickOnExpenseCategory
 })
 
 document.body.addEventListener("keyup",function(event){
-    if(!event.target.closest(".income-category"))return
+    if(!event.target.closest("table .income-category"))return
     if(event.keyCode !== 13) return;
     handleChangeOrEnterOnEditOfIncomeCategory(event) //related to handleDblClickOnIncomeCategory 
 })
 
 document.body.addEventListener("keyup",function(event){
-    if(!event.target.closest(".expense-category"))return
+    if(!event.target.closest("table .expense-category"))return
     if(event.keyCode !== 13) return;
     handleChangeOrEnterOnEditOfExpenseCategory(event) //related to  handleDblClickOnExpenseCategory
 })
 
 document.body.addEventListener("keyup",function(event){
-    if(!event.target.closest(".income-source"))return
+    if(!event.target.closest("table .income-source"))return
     if(event.keyCode !== 13) return;
     handleEnterOnEditOfIncomeSource(event) 
 })
 
 document.body.addEventListener("keyup",function(event){
-    if(!event.target.closest(".expense-source"))return
+    if(!event.target.closest("table .expense-source"))return
     if(event.keyCode !== 13) return;
     handleEnterOnEditOfExpenseSource(event) 
+})
+
+document.body.addEventListener("keyup",function(event){
+    if(!event.target.closest("table .income-amount"))return;
+    if(event.keyCode !== 13)return;
+    handleEnterOnEditOfIncomeAmount(event);
+})
+
+document.body.addEventListener("keyup",function(event){
+    if(!event.target.closest("table .expense-amount"))return;
+    if(event.keyCode !== 13)return;
+    handleEnterOnEditOfExpenseAmount(event);
 })
