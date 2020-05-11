@@ -9,6 +9,10 @@ function handleDarkModeClick(event){
     note_DOM.classList.toggle("white");
     balanceDisplay_DOM.classList.toggle("white");
     darkMode_DOM.classList.toggle("white");
+    const anchors = document.querySelectorAll("a");
+    anchors.forEach(anchor => anchor.classList.toggle("white"));
+    const footer_DOM = document.querySelector("footer");
+    footer_DOM.classList.toggle("white");
 }
 
 
