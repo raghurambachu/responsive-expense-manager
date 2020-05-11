@@ -41,7 +41,7 @@ function handleDblClickOnExpenseCategory(event){
     selectTag.name = "expense-category";
     selectTag.className = "expense-category";
 
-    let options = ["bills","charity","clothes","drinking","education","electronics","food","fuel","general","travel","gift","health","shopping","smoking","recurring deposit"];
+    let options = ["miscellanous","bills","charity","clothes","education","electronics","food","fuel","general","travel","gift","health","shopping","recurring deposit"];
     selectInnerHtml = options.map(option => {
         return `
             <option value="${option}">${option[0].toUpperCase() + option.slice(1)}</option>

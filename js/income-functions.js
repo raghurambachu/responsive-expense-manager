@@ -41,7 +41,7 @@ function handleDblClickOnIncomeCategory(event){
     selectTag.name = "income-category";
     selectTag.className = "income-category";
 
-    let options = ["salary","deposit","purse","dividend","savings"];
+    let options = ["miscellanous","salary","deposit","purse","dividend","savings"];
     selectInnerHtml = options.map(option => {
         return `
             <option value="${option}">${option[0].toUpperCase() + option.slice(1)}</option>

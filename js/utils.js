@@ -62,10 +62,10 @@ function validateForm(category_DOM,source_DOM,amount_DOM){
 }
 
 function resetForm(type,category_DOM,source_DOM,amount_DOM){
-    category_DOM.value = type === "income" ? "salary" : "smoking";
-    source_DOM.style.placeholder = "Source";
+    category_DOM.value = type === "income" ? "salary" : "general";
+    source_DOM.placeholder = "Source";
     source_DOM.value = "";
-    amount_DOM.style.placeholder = "Amount";
+    amount_DOM.placeholder = "Amount";
     amount_DOM.value = "";
 }
 
